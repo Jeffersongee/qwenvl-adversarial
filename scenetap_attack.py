@@ -27,6 +27,7 @@ from typing import Optional
 from PIL import Image, ImageDraw, ImageFont
 from openai import OpenAI
 from dotenv import load_dotenv
+from scene_renderer import render_scene_coherent
 
 load_dotenv()
 
@@ -285,12 +286,8 @@ def run_attack(image_path: str, config: AttackConfig,
     orig_model = car.get("model", "Unknown")
     bbox = car["bbox"]
 
-    adv_path = render_text_on_image(
+    adv_path = render_scene_coherent(
         image_path, config.text, config.placement, bbox,
-        font_size_frac=config.font_size_frac,
-        color=config.color,
-        bg_color=config.bg_color,
-        font_path=config.font_path,
     )
 
     attacked = query_model(adv_path, client)
