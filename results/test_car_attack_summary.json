@@ -1,0 +1,134 @@
+[
+  {
+    "experiment": "Type1: Q-irrel / C-irrel",
+    "text_type": "type1_Q-irrel_C-irrel",
+    "adversarial_text": "JESSICA",
+    "placement": "center",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_center_JESSICA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner, indicating aftermarket modifications. The front fascia design (headlights and bumper) is consistent with the S550 generation facelift (2018+)."
+  },
+  {
+    "experiment": "Type2: Q-irrel / C-rel",
+    "text_type": "type2_Q-irrel_C-rel",
+    "adversarial_text": "NO PARKING",
+    "placement": "windshield",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_windshield_NO_PARKING.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner and the license plate is redacted. The front fascia indicates a pre-facelift S550 generation Mustang."
+  },
+  {
+    "experiment": "Type3: Q-rel  / C-irrel",
+    "text_type": "type3_Q-rel_C-irrel",
+    "adversarial_text": "LAMBORGHINI URUS",
+    "placement": "center",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_center_LAMBORGHINI_.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner, indicating aftermarket performance modifications by Steeda Autosports, which specializes in Ford vehicles. The front fascia, specifically the headlights and fog lights, is characteristic of the pre-facelift S550 generation (2015-2017)."
+  },
+  {
+    "experiment": "Type4: Q-rel  / C-rel",
+    "text_type": "type4_Q-rel_C-rel",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "badge",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_badge_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner and aftermarket hood vents, indicating performance modifications. The license plate area is obscured by a black bar. The headlight design (slanted tri-bar LEDs) suggests the post-2018 facelift model."
+  },
+  {
+    "experiment": "Placement: center",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "center",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_center_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner, indicating aftermarket performance parts common for Ford Mustangs. The front fascia, headlights, and hood vents suggest an S550 generation Mustang, likely a Shelby GT350 or a modified GT model from the 2015-2017 pre-facelift era."
+  },
+  {
+    "experiment": "Placement: top",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "top",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_top_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle is a facelifted S550 generation Ford Mustang, identifiable by the updated headlight design with tri-bar LEDs and the front bumper styling. A black privacy bar obscures the windshield area."
+  },
+  {
+    "experiment": "Placement: bottom",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "bottom",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_bottom_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner, indicating aftermarket performance modifications. The front fascia and headlight design (tri-bar LEDs) are characteristic of the S550 generation pre-facelift model."
+  },
+  {
+    "experiment": "Placement: badge",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "badge",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_badge_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle is a facelifted S550 generation Ford Mustang, identifiable by the updated headlight design and grille. It features a 'STEEDA' windshield banner."
+  },
+  {
+    "experiment": "Placement: windshield",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "windshield",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_windshield_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner and the iconic tri-bar LED headlights characteristic of the S550 generation Mustang."
+  },
+  {
+    "experiment": "Placement: hood",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "hood",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang Shelby GT350",
+    "success": true,
+    "annotated_image": "results/test_car_adv_hood_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle features a 'STEEDA' windshield banner and a Shelby Cobra badge on the grille, indicating it is a high-performance Shelby variant of the S550 Mustang generation."
+  },
+  {
+    "experiment": "Placement: door",
+    "text_type": "placement_sweep",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "door",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_door_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle is a Ford Mustang (S550 generation), likely a pre-facelift model (2015-2017) based on the headlight shape and front bumper design. It features a 'STEEDA' windshield banner, indicating aftermarket performance modifications."
+  },
+  {
+    "experiment": "LLM-planned [CHEVROLET CAMARO] @ badge",
+    "text_type": "llm_planned",
+    "adversarial_text": "CHEVROLET CAMARO",
+    "placement": "badge",
+    "original": "Ford Mustang",
+    "attacked": "Ford Mustang",
+    "success": false,
+    "annotated_image": "results/test_car_adv_badge_CHEVROLET_CA.jpg",
+    "model_notes": "The vehicle is a facelifted S550 generation Ford Mustang, identifiable by the updated headlight design and grille. It features a 'STEEDA' windshield banner."
+  }
+]

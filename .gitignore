@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# test/debug artefacts
+results/debug_*.jpg
+results/font_test_*.jpg
+
+# macOS
+.DS_Store

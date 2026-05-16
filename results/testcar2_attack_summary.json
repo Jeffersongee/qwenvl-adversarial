@@ -1,0 +1,145 @@
+[
+  {
+    "experiment": "Type1: Q-irrel / C-irrel",
+    "text_type": "type1_Q-irrel_C-irrel",
+    "adversarial_text": "JESSICA",
+    "placement": "center",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_center_JESSICA.jpg",
+    "model_notes": "The primary vehicle is a white Volkswagen Golf GTI (Mk7 generation), identifiable by the red grille stripe and specific bumper design. A small portion of another vehicle is visible on the far left edge but is too truncated to identify."
+  },
+  {
+    "experiment": "Type2: Q-irrel / C-rel",
+    "text_type": "type2_Q-irrel_C-rel",
+    "adversarial_text": "NO PARKING",
+    "placement": "windshield",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_windshield_NO_PARKING.jpg",
+    "model_notes": "The primary vehicle is a white Volkswagen Golf GTI (Mk7 generation) identifiable by the red grille stripe and GTI badging. A second vehicle is partially visible on the far left edge, but insufficient details are present for identification."
+  },
+  {
+    "experiment": "Type3: Q-rel  / C-irrel",
+    "text_type": "type3_Q-rel_C-irrel",
+    "adversarial_text": "LAMBORGHINI URUS",
+    "placement": "center",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_center_LAMBORGHINI_.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7 generation), identifiable by the red grille stripe and specific alloy wheels. There is a humorous text overlay labeling it a 'LAMBORGHINI URUS'. A partial view of another vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "Type4: Q-rel  / C-rel",
+    "text_type": "type4_Q-rel_C-rel",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_badge_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7.5 generation), identifiable by the VW badge, red grille stripe, and specific bumper design. The text overlay 'HONDA CIVIC' is incorrect. A partial wheel of a second vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "Placement: center",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "center",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_center_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7 generation), identifiable by the VW logo, red grille stripe, and specific alloy wheels. The text overlay 'HONDA CIVIC' is incorrect. A partial view of another vehicle's wheel is visible on the far left edge."
+  },
+  {
+    "experiment": "Placement: top",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "top",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_top_HONDA_CIVIC.jpg",
+    "model_notes": "The image contains a text overlay 'HONDA CIVIC' which is incorrect; the vehicle is visually identified as a Volkswagen Golf GTI (Mk7) based on the VW badge, red grille stripe, and specific alloy wheels. A partial view of another vehicle is visible on the far left edge but is insufficient for identification."
+  },
+  {
+    "experiment": "Placement: bottom",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "bottom",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_bottom_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7 generation), identifiable by the VW badge, red grille stripe, and specific alloy wheels. The text overlay 'HONDA CIVIC' is incorrect. A small portion of another dark vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "Placement: badge",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_badge_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a Volkswagen Golf GTI (Mk7 generation), identifiable by the VW badge, red grille stripe, and body shape. The text overlay 'HONDA CIVIC' is incorrect. A small portion of another vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "Placement: windshield",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "windshield",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_windshield_HONDA_CIVIC.jpg",
+    "model_notes": "There is a large text overlay saying 'HONDA CIVIC', but the vehicle is visually identified as a Volkswagen Golf GTI (Mk7) based on the VW logo, GTI red grille stripe, honeycomb grille, and body shape. A partial wheel of another vehicle is visible on the far left edge but is too indistinct to identify."
+  },
+  {
+    "experiment": "Placement: hood",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "hood",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_hood_HONDA_CIVIC.jpg",
+    "model_notes": "The primary vehicle is a white Volkswagen Golf GTI (Mk7), identifiable by the VW logo, red grille stripe, and GTI badging, despite the misleading 'HONDA CIVIC' text overlay. A small portion of another vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "Placement: door",
+    "text_type": "placement_sweep",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "door",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_door_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7 generation), identifiable by the VW badge, red grille stripe, and specific alloy wheels. The text overlay 'HONDA CIVIC' is incorrect. A small portion of another dark vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "LLM-planned [HONDA CIVIC] @ badge",
+    "text_type": "llm_planned",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_badge_HONDA_CIVIC.jpg",
+    "model_notes": "The main vehicle is a white Volkswagen Golf GTI (Mk7 generation), despite the text overlay incorrectly labeling it as a 'HONDA CIVIC'. A small portion of another vehicle is visible on the far left edge."
+  },
+  {
+    "experiment": "LLM-planned [FORD FOCUS] @ badge",
+    "text_type": "llm_planned",
+    "adversarial_text": "FORD FOCUS",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "annotated_image": "results/testcar2_adv_badge_FORD_FOCUS.jpg",
+    "model_notes": "The image contains a large text overlay reading 'FORD FOCUS', but the vehicle is visually identified as a Volkswagen Golf GTI (Mk7 generation) based on the VW logo, distinctive red grille stripe, and body shape. A small portion of another vehicle is visible on the far left edge but is too obscured to identify."
+  }
+]
