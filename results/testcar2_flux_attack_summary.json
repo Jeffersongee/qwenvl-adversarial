@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Honda Civic badge",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_badge_HONDA_CIVIC.jpg",
+    "model_notes": "Partial view of another vehicle on the far left edge, but insufficient detail for identification."
+  },
+  {
+    "label": "Toyota Corolla badge",
+    "adversarial_text": "TOYOTA COROLLA",
+    "placement": "badge",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_badge_TOYOTA_COROLLA.jpg",
+    "model_notes": "Partial view of another vehicle on the far left edge, but insufficient detail for identification."
+  },
+  {
+    "label": "Ford Focus door decal",
+    "adversarial_text": "FORD FOCUS",
+    "placement": "door",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_door_FORD_FOCUS.jpg",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7). A partial wheel and bumper of a second vehicle are visible on the far left edge."
+  },
+  {
+    "label": "Honda Civic door decal",
+    "adversarial_text": "HONDA CIVIC",
+    "placement": "door",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_door_HONDA_CIVIC.jpg",
+    "model_notes": "Main vehicle is a white VW Golf GTI (Mk7). Partial vehicle visible on the far left edge."
+  },
+  {
+    "label": "Toyota Corolla hood stencil",
+    "adversarial_text": "TOYOTA COROLLA",
+    "placement": "hood",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_hood_TOYOTA_COROLLA.jpg",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7/Mk7.5). A small portion of another vehicle's wheel is visible on the far left edge."
+  },
+  {
+    "label": "Ford Focus windshield sticker",
+    "adversarial_text": "FORD FOCUS",
+    "placement": "windshield",
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "output_image": "results/testcar2_flux_windshield_FORD_FOCUS.jpg",
+    "model_notes": "Partial view of another vehicle on the far left edge, but insufficient detail for identification."
+  }
+]

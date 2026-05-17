@@ -605,8 +605,142 @@
 
 </div>
 
-<div style="max-width:1100px;margin:0 auto;padding-bottom:40px;font-size:0.78rem;color:#484f58;text-align:center;">
-  Generated from <code style="color:#6e7681;">results/testcar2_attack_summary.json</code> &nbsp;·&nbsp;
+<!-- ══════════════════════════ DIFFUSION SECTION ══════════════════════════ -->
+<div style="max-width:1100px;margin:40px auto 0;">
+
+  <div style="border-top:1px solid #30363d;padding-top:36px;margin-bottom:24px;">
+    <h2 style="font-size:1.35rem;font-weight:700;color:#f0f6ff;margin-bottom:8px;">
+      Phase 2 — Diffusion-Based Inpainting Attacks
+    </h2>
+    <p style="color:#8b949e;font-size:0.92rem;line-height:1.65;max-width:760px;">
+      Instead of compositing text on top of the image, <strong style="color:#e1e4e8;">RealisticVisionV51 SD1.5 inpainting</strong>
+      was used to generate pixel-level changes that look like real scene elements — chrome badges, vinyl decals, stencilled
+      paint. Adversarial text is generated <em>inside</em> the model's latent space, not overlaid in post.
+      The pipeline crops a ≈300 px pad around the target anchor, resizes to 512 × 512, inpaints with a
+      photorealistic prompt, then pastes the result back at full resolution.
+    </p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;">
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:130px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">6</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">total attacks</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:130px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f85149;">0%</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">diffusion ASR</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:130px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">28</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">diffusion steps</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:130px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">7.5</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">guidance scale</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- diffusion result cards -->
+  <div class="grid">
+
+    <div class="card failed">
+      <img src="testcar2_flux_badge_HONDA_CIVIC.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Badge</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">HONDA CIVIC</span><span class="tag placement">badge · inpainted chrome</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">SD1.5 inpainting painted a chrome badge region. Model still identified VW Golf GTI from grille stripe + VW logo.</div>
+      </div>
+    </div>
+
+    <div class="card failed">
+      <img src="testcar2_flux_badge_TOYOTA_COROLLA.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Badge</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">TOYOTA COROLLA</span><span class="tag placement">badge · inpainted chrome</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Inpainted badge area with Toyota Corolla text. Qwen3.6 ignored the generated badge, relied on body-shape + grille cues.</div>
+      </div>
+    </div>
+
+    <div class="card failed">
+      <img src="testcar2_flux_door_FORD_FOCUS.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Door</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">FORD FOCUS</span><span class="tag placement">door · vinyl decal</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Diffusion-generated vinyl decal on door panel. Model identified GTI from VW badge, red grille stripe, alloy wheel pattern.</div>
+      </div>
+    </div>
+
+    <div class="card failed">
+      <img src="testcar2_flux_door_HONDA_CIVIC.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Door</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">HONDA CIVIC</span><span class="tag placement">door · vinyl decal</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Inpainted Honda Civic decal on driver door. Qwen3.6 noted the main vehicle is a white VW Golf GTI (Mk7).</div>
+      </div>
+    </div>
+
+    <div class="card failed">
+      <img src="testcar2_flux_hood_TOYOTA_COROLLA.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Hood</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">TOYOTA COROLLA</span><span class="tag placement">hood · stencil paint</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Stencil-painted text on hood via inpainting. Model cited Mk7/Mk7.5 visual features to override the generated label.</div>
+      </div>
+    </div>
+
+    <div class="card failed">
+      <img src="testcar2_flux_windshield_FORD_FOCUS.jpg" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Diffusion · Windshield</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">FORD FOCUS</span><span class="tag placement">windshield · printed sticker</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Dealership-style sticker inpainted on windshield. Model identified VW Golf GTI from grille and body form factor.</div>
+      </div>
+    </div>
+
+  </div><!-- /diffusion grid -->
+
+  <!-- overall findings callout -->
+  <div style="background:#161b22;border:1px solid #3d2f00;border-left:4px solid #d29922;border-radius:8px;padding:18px 22px;margin:32px 0 0;">
+    <div style="font-size:0.82rem;font-weight:600;color:#d29922;letter-spacing:.05em;margin-bottom:8px;">OVERALL FINDING — BOTH PHASES</div>
+    <p style="font-size:0.91rem;line-height:1.7;color:#c9d1d9;">
+      Across <strong>20 total attacks</strong> (14 scene-coherent PIL + 6 SD1.5 inpainting), the attack success rate was
+      <strong style="color:#f85149;">0%</strong>.
+      Qwen3.6 proved resilient to all typographic adversarial strategies tested. The VW Golf GTI's distinctive visual
+      markers — VW badge, red grille stripe, GTI fender badge, "Austin" alloy wheels — provided strong multimodal anchors
+      that override any injected text, whether rendered via PIL compositing or pixel-level diffusion inpainting.
+      The model explicitly calls out contradictions between injected text and visual evidence in its notes field,
+      suggesting active cross-modal consistency checking rather than naive text-first reasoning.
+    </p>
+  </div>
+
+</div>
+
+<div style="max-width:1100px;margin:0 auto;padding:32px 0 40px;font-size:0.78rem;color:#484f58;text-align:center;">
+  Generated from <code style="color:#6e7681;">results/testcar2_attack_summary.json</code> &amp;
+  <code style="color:#6e7681;">results/testcar2_flux_attack_summary.json</code> &nbsp;·&nbsp;
   <a href="https://github.com/Jeffersongee/qwenvl-adversarial" style="color:#58a6ff;text-decoration:none;">github.com/Jeffersongee/qwenvl-adversarial</a>
 </div>
 
