@@ -1,0 +1,134 @@
+[
+  {
+    "target_class": "Honda Civic",
+    "epsilon": 4,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 4.0,
+    "output_image": "results/testcar2_pgd_eps04_Honda_Civic.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7). A small portion of another vehicle's wheel/bumper is visible on the far left edge."
+  },
+  {
+    "target_class": "Honda Civic",
+    "epsilon": 8,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 8.0,
+    "output_image": "results/testcar2_pgd_eps08_Honda_Civic.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7 generation). A partial wheel of another vehicle is visible on the far left edge but is too incomplete to identify or box reliably."
+  },
+  {
+    "target_class": "Honda Civic",
+    "epsilon": 16,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 16.0,
+    "output_image": "results/testcar2_pgd_eps16_Honda_Civic.png",
+    "model_notes": "Detected a white Volkswagen Golf GTI (Mk7 generation) parked in front of a graffiti wall. Partial wheel of another vehicle visible on the far left edge but insufficient for full detection."
+  },
+  {
+    "target_class": "Toyota Corolla",
+    "epsilon": 4,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 4.0,
+    "output_image": "results/testcar2_pgd_eps04_Toyota_Corolla.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7). Secondary vehicle is partially visible on the far left edge."
+  },
+  {
+    "target_class": "Toyota Corolla",
+    "epsilon": 8,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 8.0,
+    "output_image": "results/testcar2_pgd_eps08_Toyota_Corolla.png",
+    "model_notes": "Partial wheel of another vehicle visible on far left edge, but insufficient for identification."
+  },
+  {
+    "target_class": "Toyota Corolla",
+    "epsilon": 16,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 16.0,
+    "output_image": "results/testcar2_pgd_eps16_Toyota_Corolla.png",
+    "model_notes": "White Volkswagen Golf GTI (Mk7) parked in front of a graffiti wall. Partial wheel of another vehicle visible on the far left edge, but insufficient for identification."
+  },
+  {
+    "target_class": "Ford Focus",
+    "epsilon": 4,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 4.0,
+    "output_image": "results/testcar2_pgd_eps04_Ford_Focus.png",
+    "model_notes": "Partial view of another vehicle on the far left edge, but insufficient detail for identification."
+  },
+  {
+    "target_class": "Ford Focus",
+    "epsilon": 8,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 8.0,
+    "output_image": "results/testcar2_pgd_eps08_Ford_Focus.png",
+    "model_notes": "Partial vehicle visible on the far left edge, but insufficient detail for identification."
+  },
+  {
+    "target_class": "Ford Focus",
+    "epsilon": 16,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 16.0,
+    "output_image": "results/testcar2_pgd_eps16_Ford_Focus.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7). A partial wheel of another vehicle is visible on the far left edge."
+  },
+  {
+    "target_class": "Chevrolet Cruze",
+    "epsilon": 4,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 4.0,
+    "output_image": "results/testcar2_pgd_eps04_Chevrolet_Cruze.png",
+    "model_notes": "White Volkswagen Golf GTI parked in front of a graffiti wall. Partial view of another vehicle on the far left edge, but insufficient for identification."
+  },
+  {
+    "target_class": "Chevrolet Cruze",
+    "epsilon": 8,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 8.0,
+    "output_image": "results/testcar2_pgd_eps08_Chevrolet_Cruze.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7 generation). A partial wheel of another vehicle is visible on the far left edge but is too incomplete to identify."
+  },
+  {
+    "target_class": "Chevrolet Cruze",
+    "epsilon": 16,
+    "steps": 50,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 16.0,
+    "output_image": "results/testcar2_pgd_eps16_Chevrolet_Cruze.png",
+    "model_notes": "Primary vehicle is a white VW Golf GTI (Mk7). A partial wheel of another vehicle is visible on the far left edge."
+  }
+]
