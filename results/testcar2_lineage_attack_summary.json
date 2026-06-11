@@ -1,0 +1,32 @@
+[
+  {
+    "epsilon": 8,
+    "steps": 60,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 8.0,
+    "output_image": "results/testcar2_lineage_eps08.png",
+    "model_notes": "Detected a white Volkswagen Golf GTI (Mk7) parked in front of a graffiti wall. Partial wheel of another vehicle visible on the far left edge, but insufficient for full detection."
+  },
+  {
+    "epsilon": 16,
+    "steps": 60,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf GTI",
+    "success": false,
+    "linf": 16.0,
+    "output_image": "results/testcar2_lineage_eps16.png",
+    "model_notes": "White hatchback with red grille stripe indicating GTI trim."
+  },
+  {
+    "epsilon": 32,
+    "steps": 60,
+    "original": "Volkswagen Golf GTI",
+    "attacked": "Volkswagen Golf",
+    "success": true,
+    "linf": 32.0,
+    "output_image": "results/testcar2_lineage_eps32.png",
+    "model_notes": "White hatchback parked in front of a graffiti-covered wall."
+  }
+]

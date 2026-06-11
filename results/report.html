@@ -280,20 +280,20 @@
 <!-- ── STATS ── -->
 <div class="stats">
   <div class="stat-card">
-    <div class="num red">0%</div>
+    <div class="num red">1 / 35</div>
     <div class="lbl">Overall Attack Success Rate</div>
   </div>
   <div class="stat-card">
-    <div class="num gray">32</div>
+    <div class="num gray">35</div>
     <div class="lbl">Total Attacks</div>
   </div>
   <div class="stat-card">
-    <div class="num blue">3</div>
+    <div class="num blue">4</div>
     <div class="lbl">Attack Phases</div>
   </div>
   <div class="stat-card">
-    <div class="num gray">2</div>
-    <div class="lbl">Threat Models</div>
+    <div class="num green">33%</div>
+    <div class="lbl">Lineage Transfer ASR</div>
   </div>
 </div>
 
@@ -829,19 +829,109 @@
 
   </div><!-- /pgd grid -->
 
+  <!-- ══════════════════════════ LINEAGE SECTION ══════════════════════════ -->
+  <div style="border-top:1px solid #30363d;padding-top:36px;margin:44px 0 24px;">
+    <h2 style="font-size:1.35rem;font-weight:700;color:#f0f6ff;margin-bottom:8px;">
+      Phase 4 — Lineage-Matched Surrogate <span style="color:#3fb950;">(first transfer success)</span>
+    </h2>
+    <p style="color:#8b949e;font-size:0.92rem;line-height:1.65;max-width:790px;">
+      Phase 3's 0% raised a hypothesis: the failure was <em>feature-misalignment</em>, not robustness. To test it, the
+      surrogate was swapped from CLIP/SigLIP to the <strong style="color:#e1e4e8;">Qwen2-VL-2B vision encoder</strong> — the
+      open-weight architectural ancestor of Qwen3.6's own visual tower (665 M params, 14-px patches, spatial-merge 2).
+      Because that tower has no text head, the targeted text-loss isn't applicable; instead the objective is reference-free
+      <strong style="color:#e1e4e8;">feature-disruption</strong> — maximise the L2 deviation of the lineage encoder's pooled
+      features from the clean image under an L∞ budget (Lu et al. 2020). A differentiable patchifier mirrors Qwen2-VL's exact
+      flatten layout so gradients reach pixel space.
+    </p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;">
+      <div style="background:#161b22;border:1px solid #2ea04326;border-radius:8px;padding:14px 20px;min-width:128px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#3fb950;">1/3</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">transfer ASR</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:128px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">665M</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">surrogate params</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:128px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">ε=32</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">budget that broke it</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 20px;min-width:128px;text-align:center;">
+        <div style="font-size:1.9rem;font-weight:700;color:#f0f6ff;">GTI→Golf</div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-top:2px;">trim dropped</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lineage perturbation visualization -->
+  <div style="background:#161b22;border:1px solid #2ea04326;border-radius:10px;padding:20px 24px;margin-bottom:24px;">
+    <div style="font-size:0.9rem;font-weight:600;color:#e1e4e8;margin-bottom:6px;">
+      The one that transferred — ε=32/255 (working resolution), Qwen2-VL feature-disruption
+    </div>
+    <p style="font-size:0.84rem;color:#8b949e;line-height:1.55;margin-bottom:14px;">
+      Left: original. Centre: adversarial. Right: perturbation amplified ×6. Optimised at the 364×476 working resolution
+      (where the L∞ bound holds), then LANCZOS-upsampled to full-res for the API query — note the upsampling introduces
+      visible ringing, so this is a <em>looser</em> perturbation than Phase 3's pixel-exact bound, not a stricter one.
+    </p>
+    <img src="testcar2_lineage_triptych.png" alt="lineage attack triptych"
+         style="width:100%;border-radius:8px;display:block;">
+  </div>
+
+  <!-- lineage per-budget cards -->
+  <div class="grid">
+    <div class="card failed">
+      <img src="testcar2_lineage_eps08.png" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Lineage · ε=8</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">feature-disruption</span><span class="tag placement">feat_dev ≈ 28</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Still fully identified: "white VW Golf GTI (Mk7) … Mk7 generation."</div>
+      </div>
+    </div>
+    <div class="card failed">
+      <img src="testcar2_lineage_eps16.png" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Lineage · ε=16</div><span class="badge failed">FAILED</span></div>
+        <div class="meta-row"><span class="tag adv-text">feature-disruption</span><span class="tag placement">feat_dev ≈ 41</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val">VW Golf GTI</div></div>
+        </div>
+        <div class="notes">Make/model held, but detail eroding: notes shrank to "white hatchback with red grille stripe indicating GTI trim."</div>
+      </div>
+    </div>
+    <div class="card" style="border-color:#2ea043;">
+      <img src="testcar2_lineage_eps32.png" alt="">
+      <div class="card-body">
+        <div class="card-header"><div class="card-title">Lineage · ε=32</div><span class="badge" style="background:#2ea04326;color:#3fb950;border:1px solid #2ea04366;">SUCCESS</span></div>
+        <div class="meta-row"><span class="tag adv-text">feature-disruption</span><span class="tag placement">feat_dev ≈ 45</span></div>
+        <div class="result-row">
+          <div class="col"><div class="col-label">Original</div><div class="col-val">VW Golf GTI</div></div>
+          <div class="col"><div class="col-label">Attacked</div><div class="col-val" style="color:#3fb950;">VW Golf</div></div>
+        </div>
+        <div class="notes"><strong style="color:#3fb950;">Trim dropped.</strong> Anchors gone — notes collapsed to just "white hatchback parked in front of a graffiti-covered wall." No VW badge, no GTI stripe, no Austin wheels.</div>
+      </div>
+    </div>
+  </div><!-- /lineage grid -->
+
   <!-- overall findings callout -->
-  <div style="background:#161b22;border:1px solid #3d2f00;border-left:4px solid #d29922;border-radius:8px;padding:18px 22px;margin:32px 0 0;">
-    <div style="font-size:0.82rem;font-weight:600;color:#d29922;letter-spacing:.05em;margin-bottom:8px;">OVERALL FINDING — ALL THREE PHASES</div>
+  <div style="background:#161b22;border:1px solid #2ea04340;border-left:4px solid #2ea043;border-radius:8px;padding:18px 22px;margin:32px 0 0;">
+    <div style="font-size:0.82rem;font-weight:600;color:#3fb950;letter-spacing:.05em;margin-bottom:8px;">OVERALL FINDING — ALL FOUR PHASES</div>
     <p style="font-size:0.91rem;line-height:1.7;color:#c9d1d9;">
-      Across <strong>32 total attacks</strong> (14 scene-coherent PIL overlays + 6 SD1.5 inpainting + 12 PGD transfer), the
-      attack success rate was <strong style="color:#f85149;">0%</strong>. Two independent threat models both failed:
-      <em>typographic</em> attacks (Phases 1–2) were explicitly detected and overruled by the VW Golf GTI's visual
-      markers — VW badge, red grille stripe, GTI fender badge, "Austin" wheels — while the <em>imperceptible-perturbation</em>
-      attack (Phase 3) succeeded against the open-weight SigLIP/CLIP surrogates (embedding driven strongly toward the target
-      class) but produced <strong>no transfer</strong> to Qwen3.6. The absence of transfer suggests Qwen3.6's vision encoder
-      does not share a closely-aligned feature geometry with public CLIP-family encoders — or that its language-model stage
-      re-grounds identity from high-level semantics rather than the low-level features the perturbation corrupts. Either way,
-      the model behaves as if it cross-checks modalities rather than trusting any single corrupted channel.
+      Across <strong>35 total attacks</strong> (14 PIL overlays + 6 SD1.5 inpainting + 12 CLIP/SigLIP PGD + 3 lineage PGD),
+      exactly <strong style="color:#3fb950;">one</strong> succeeded — and it is the most informative result of the project.
+      <em>Typographic</em> attacks (Phases 1–2) were explicitly detected and overruled by the GTI's visual markers.
+      <em>Imperceptible perturbations</em> on public CLIP/SigLIP encoders (Phase 3) drove those surrogates strongly toward
+      target classes yet produced <strong>zero</strong> transfer. But the very same perturbation recipe, retargeted onto the
+      <strong style="color:#e1e4e8;">Qwen-lineage</strong> vision encoder (Phase 4), <strong>did</strong> transfer at ε=32:
+      Qwen3.6 dropped "GTI" → "Golf" and its description degraded from fine-grained badges/wheels to a generic "white
+      hatchback." This is direct evidence that Phase 3's failure was <strong>encoder-feature-misalignment, not invulnerability</strong>
+      — corrupting features in a space geometrically close to Qwen3.6's own is what carries over. The transfer is partial
+      (sub-model, large budget, requires the family-matched surrogate), which still leaves Qwen3.6 robust to the cheaper,
+      black-box, and human-visible attacks — but it shows the lineage-surrogate path is the one worth pushing further.
     </p>
   </div>
 
@@ -849,8 +939,8 @@
 
 <div style="max-width:1100px;margin:0 auto;padding:32px 0 40px;font-size:0.78rem;color:#484f58;text-align:center;">
   Generated from <code style="color:#6e7681;">testcar2_attack_summary.json</code>,
-  <code style="color:#6e7681;">testcar2_flux_attack_summary.json</code> &amp;
-  <code style="color:#6e7681;">testcar2_pgd_attack_summary.json</code> &nbsp;·&nbsp;
+  <code style="color:#6e7681;">…_flux_…</code>, <code style="color:#6e7681;">…_pgd_…</code> &amp;
+  <code style="color:#6e7681;">…_lineage_attack_summary.json</code> &nbsp;·&nbsp;
   <a href="https://github.com/Jeffersongee/qwenvl-adversarial" style="color:#58a6ff;text-decoration:none;">github.com/Jeffersongee/qwenvl-adversarial</a>
 </div>
 

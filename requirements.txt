@@ -12,3 +12,10 @@ accelerate
 # Phase 3 — surrogate-model PGD transfer (SigLIP + CLIP)
 protobuf
 sentencepiece
+
+# Phase 4 — lineage-matched surrogate (Qwen2-VL-2B vision encoder).
+# NOTE: Qwen2-VL needs transformers>=4.45 (tested on 4.49.0), which is newer
+# than the 4.44.0 pinned for Phase 2 diffusion. Run Phase 4 in its own venv,
+# or upgrade to 4.49.0 after the diffusion runs are complete.
+#   transformers==4.49.0
+# The Qwen2-VL patch_embed uses Conv3D (unsupported on Apple MPS) → CPU only.
